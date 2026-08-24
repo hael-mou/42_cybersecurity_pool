@@ -1,0 +1,24 @@
+[project]
+name = "spider"
+version = "0.1.0"
+description = "Web scraping tool for collecting resources from the same-domain"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "hamza el moudden" }]
+dependencies = [
+    "playwright>=1.62.0",
+    "requests>=2.34.2",
+    "rich-argparse>=1.8.0",
+    "typing-extensions>=4.16.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hael-mou/42_cybersecurity_pool"
+Repository = "https://github.com/hael-mou/42_cybersecurity_pool/tree/main/Arachnida/spider"
+
+[project.scripts]
+spider = "spider.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
