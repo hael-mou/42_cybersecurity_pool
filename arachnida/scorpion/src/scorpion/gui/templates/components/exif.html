@@ -1,0 +1,45 @@
+
+{% if metadata.exif %}
+    {% for section_name, section_data in metadata.exif.items() %}
+        <div class="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70" >
+            <div class="border-b border-slate-800 bg-slate-900 px-6 py-4">
+                <h3 class="font-medium">
+                    {{ section_name }}
+                </h3>
+            </div>
+            
+            <div class="divide-y divide-slate-800">
+                {% for key, value in section_data.items() %}
+                    <div class="grid gap-2 px-6 py-4 sm:grid-cols-[220px_1fr]">
+                        <p class="text-sm font-medium text-slate-400">
+                            {{ key }}
+                        </p>
+                        <p class="break-all text-sm text-slate-100">
+                            : {{ value }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+{% else %}
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6" >
+        <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-slate-400">
+                —
+            </div>
+
+            <div>
+                <h3 class="text-sm font-medium">
+                    No EXIF data
+                </h3>
+
+                <p class="mt-1 text-sm text-slate-500">
+                    This image does not contain readable
+                    EXIF metadata.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
