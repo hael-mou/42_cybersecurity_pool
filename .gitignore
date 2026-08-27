@@ -136,3 +136,5 @@ old/
 build/
 *.egg-info/
 dist/
+
+*.key

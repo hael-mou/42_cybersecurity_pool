@@ -1,0 +1,27 @@
+[project]
+name = "ft-otp"
+version = "0.1.0"
+description = "A one-time password (OTP) generator"
+readme = "README.md"
+authors = [{ name = "hael-mou" }]
+requires-python = ">=3.12.2"
+dependencies = [
+    "cryptography>=50.0.0",
+    "flask>=3.1.3",
+    "pillow>=12.3.0",
+    "qrcode>=8.2",
+    "rich-argparse>=1.8.0",
+    "typing-extensions>=4.16.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hael-mou/42_cybersecurity_pool"
+Repository = "https://github.com/hael-mou/42_cybersecurity_pool/tree/main/ft_otp"
+
+[project.scripts]
+ft-otp = "ft_otp.cli:main"
+ft-otp-gui = "ft_otp.gui:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
