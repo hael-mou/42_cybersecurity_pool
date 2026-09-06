@@ -1,0 +1,31 @@
+
+Port 4242
+
+# Root
+PermitRootLogin no
+
+# Authentication
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+UsePAM no
+
+# Authorized keys
+AuthorizedKeysFile .ssh/authorized_keys
+
+# User restriction
+AllowUsers hael-mou
+
+# Brute-force protection
+MaxAuthTries 3
+LoginGraceTime 20
+
+# Disable unnecessary features
+X11Forwarding no
+AllowAgentForwarding no
+AllowTcpForwarding no
+PermitTunnel no
+
+# Don't allow empty passwords
+PermitEmptyPasswords no
+

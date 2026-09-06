@@ -1,0 +1,9 @@
+
+services:
+    ft_onion:
+        image: hael-mou/ft_onion:0.0.1
+        build: .
+        
+        ports:
+            - 80:80
+            - 4242:4242
